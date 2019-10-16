@@ -32,6 +32,7 @@ html {
 }
 
 .root .leftviwe {
+  position: relative;
   width: 25%;
   height: 70%;
   margin-top: 100px;
@@ -67,6 +68,7 @@ html {
 }
 
 .root .rightviwe button {
+  cursor: pointer;
   height: 78px;
   background-color: #904C77;
   color: #FFFFFF;
@@ -76,6 +78,7 @@ html {
 }
 
 .root .items {
+  position: relative;
   margin-top: 180px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -91,9 +94,9 @@ html {
   font-family: sans-serif;
   color: #904C77;
   font-size: 22px;
-  top: 10px;
-  left: 250px;
-  position: relative;
+  top: -10px;
+  left: 220px;
+  position: absolute;
   width: 200px;
   height: 78px;
   background-color: #E7CFCD;
@@ -104,9 +107,9 @@ html {
   font-family: sans-serif;
   color: #904C77;
   font-size: 22px;
-  top: 20px;
-  left: 250px;
-  position: relative;
+  top: 83px;
+  left: 220px;
+  position: absolute;
   width: 200px;
   height: 78px;
   background-color: #CFC0BD;
@@ -117,9 +120,9 @@ html {
   font-family: sans-serif;
   color: #904C77;
   font-size: 22px;
-  top: 30px;
-  left: 250px;
-  position: relative;
+  top: 183px;
+  left: 220px;
+  position: absolute;
   width: 200px;
   height: 78px;
   background-color: #CAB6CD;
@@ -130,9 +133,9 @@ html {
   font-family: sans-serif;
   color: #904C77;
   font-size: 22px;
-  top: 40px;
-  left: 250px;
-  position: relative;
+  top: 283px;
+  left: 220px;
+  position: absolute;
   width: 200px;
   height: 78px;
   background-color: #BA8F95;
@@ -143,9 +146,9 @@ html {
   font-family: sans-serif;
   color: #904C77;
   font-size: 22px;
-  top: 50px;
-  left: 250px;
-  position: relative;
+  top: 383px;
+  left: 220px;
+  position: absolute;
   width: 200px;
   height: 78px;
   background-color: #D3C1C3;

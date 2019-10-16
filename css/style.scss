@@ -1,6 +1,24 @@
 $colors: ( item-text-color :#904C77, text-color: #FFFFFF, border-color:#904C77, backgrond-color:#904C77);
 $divcolors: ( div1: #E7CFCD, div2:#CFC0BD, div3:#CAB6CD, div4:#BA8F95, div5:#D3C1C3);
 $text-font:sans-serif;
+@mixin textstylebtn {
+    color: color(text-color);
+    font-family: $text-font;
+    font-size: 22px;
+    text-align: center;
+}
+@mixin stylediv {
+    left: 220px;
+    position: absolute;
+    width: 200px;
+    height: 78px;
+}
+@mixin divstyletext {
+    text-align: center;
+	font-family: $text-font;
+	color: color(item-text-color);
+	font-size: 22px;
+}
 @function divcolor($divcolor) {
 	$divcolor: map-get($map: $divcolors, $key: $divcolor);
 	@return $divcolor;
@@ -38,6 +56,7 @@ html {
 	margin: 0 auto;
 	justify-content: space-between;
 	.leftviwe {
+		position: relative;
 		width: 25%;
 		height: 70%;
 		margin-top: 100px;
@@ -56,76 +75,46 @@ html {
 		flex-direction: column;
 		width: 20%;
 		button {
+            cursor: pointer;
 			height: 78px;
 			background-color: color(backgrond-color);
-			color: color(text-color);
-			font-family: $text-font;
-			font-size: 22px;
-			text-align: center;
+            @include textstylebtn();
 		}
 	}
 	.items {
+        position: relative;
 		margin-top: 180px;
 		display: flex;
 		flex-direction: column;
 		.div1 {
-			text-align: center;
-			font-family: $text-font;
-			color: color(item-text-color);
-			font-size: 22px;
-			top: 10px;
-			left: 250px;
-			position: relative;
-			width: 200px;
-			height: 78px;
+			@include divstyletext();
+			top: -10px;
+		    @include stylediv();
 			background-color: divcolor(div1);
 		}
 		.div2 {
-			text-align: center;
-			font-family: $text-font;
-			color: color(item-text-color);
-			font-size: 22px;
-			top: 20px;
-			left: 250px;
-			position: relative;
-			width: 200px;
-			height: 78px;
+			@include divstyletext();
+            top: 83px;
+
+		    @include stylediv();
 			background-color: divcolor(div2);
 		}
 		.div3 {
-			text-align: center;
-			font-family: $text-font;
-			color: color(item-text-color);
-			font-size: 22px;
-			top: 30px;
-			left: 250px;
-			position: relative;
-			width: 200px;
-			height: 78px;
+	    	@include divstyletext();
+			top: 183px;
+            @include stylediv();
 			background-color: divcolor(div3);
 		}
 		.div4 {
-			text-align: center;
-			font-family: $text-font;
-			color: color(item-text-color);
-			font-size: 22px;
-			top: 40px;
-			left: 250px;
-			position: relative;
-			width: 200px;
-			height: 78px;
+	    	@include divstyletext();
+			top: 283px;
+            @include stylediv();
 			background-color: divcolor(div4);
 		}
 		.div5 {
-			text-align: center;
-			font-family: $text-font;
-			color: color(item-text-color);
-			font-size: 22px;
-			top: 50px;
-			left: 250px;
-			position: relative;
-			width: 200px;
-			height: 78px;
+			@include divstyletext();
+			top: 383px;
+            @include stylediv();
 			background-color: divcolor(div5);
 		}
 	}
