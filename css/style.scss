@@ -1,62 +1,132 @@
-$colors: (
-    text-color: #FFFFFF,
-    border-color:#904C77,
-    backgrond-color:#904C77,
-);
+$colors: ( item-text-color :#904C77, text-color: #FFFFFF, border-color:#904C77, backgrond-color:#904C77);
+$divcolors: ( div1: #E7CFCD, div2:#CFC0BD, div3:#CAB6CD, div4:#BA8F95, div5:#D3C1C3);
 $text-font:sans-serif;
+@function divcolor($divcolor) {
+	$divcolor: map-get($map: $divcolors, $key: $divcolor);
+	@return $divcolor;
+}
+
 @function color($color) {
-    $color: map-get($map: $colors, $key: $color);
-    @return $color;
+	$color: map-get($map: $colors, $key: $color);
+	@return $color;
 }
-body,html {
-    height: 100%;
+
+body,
+html {
+	height: 100%;
 }
+
 .header {
-    background-color: color(backgrond-color);
-    height: 80px;
-    margin-top: -15px;
-    margin-right: -8px;
-    margin-left: -8px;
-    h1 {
-        text-align: center;
-        font-family: $text-font;
-        font-size: 30px;
-        color: color(text-color);
-        padding-top: 30PX;
-    }
+	background-color: color(backgrond-color);
+	height: 80px;
+	margin-top: -15px;
+	margin-right: -8px;
+	margin-left: -8px;
+	h1 {
+		text-align: center;
+		font-family: $text-font;
+		font-size: 30px;
+		color: color(text-color);
+		padding-top: 30PX;
+	}
 }
+
 .root {
-    display: flex;
-    width: 80%;
-    height: 100%;
-    margin: 0 auto;
-    .leftviwe {
-        width: 25%;
-        height: 70%;
-        margin-top: 100px;
-        margin-left: 85px;
-        border-bottom: solid 5px color(border-color);
-        border-right: solid 5px color(border-color);
-        border-left: solid 5px color(border-color);
-        justify-content: center;
-        display: flex;
-        flex-direction: column;
-    }
-        .rightviwe {
-           justify-content: center;
-            margin-left: 600px;
-            display: flex;
-            flex-direction: column;
-           width: 20%;
-           button {
-               
-               height: 78px;
-               background-color: color(backgrond-color);
-               color: color(text-color);
-               font-family: $text-font;
-               font-size: 22px;
-               text-align: center;
-           }
-           }
-    }
- 
+	display: flex;
+	width: 80%;
+	height: 100%;
+	margin: 0 auto;
+	justify-content: space-between;
+	.leftviwe {
+		width: 25%;
+		height: 70%;
+		margin-top: 100px;
+		margin-left: 85px;
+		border-bottom: solid 5px color(border-color);
+		border-right: solid 5px color(border-color);
+		border-left: solid 5px color(border-color);
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+	}
+	.rightviwe {
+		justify-content: center;
+		margin-left: 600px;
+		display: flex;
+		flex-direction: column;
+		width: 20%;
+		button {
+			height: 78px;
+			background-color: color(backgrond-color);
+			color: color(text-color);
+			font-family: $text-font;
+			font-size: 22px;
+			text-align: center;
+		}
+	}
+	.items {
+		margin-top: 180px;
+		display: flex;
+		flex-direction: column;
+		.div1 {
+			text-align: center;
+			font-family: $text-font;
+			color: color(item-text-color);
+			font-size: 22px;
+			top: 10px;
+			left: 250px;
+			position: relative;
+			width: 200px;
+			height: 78px;
+			background-color: divcolor(div1);
+		}
+		.div2 {
+			text-align: center;
+			font-family: $text-font;
+			color: color(item-text-color);
+			font-size: 22px;
+			top: 20px;
+			left: 250px;
+			position: relative;
+			width: 200px;
+			height: 78px;
+			background-color: divcolor(div2);
+		}
+		.div3 {
+			text-align: center;
+			font-family: $text-font;
+			color: color(item-text-color);
+			font-size: 22px;
+			top: 30px;
+			left: 250px;
+			position: relative;
+			width: 200px;
+			height: 78px;
+			background-color: divcolor(div3);
+		}
+		.div4 {
+			text-align: center;
+			font-family: $text-font;
+			color: color(item-text-color);
+			font-size: 22px;
+			top: 40px;
+			left: 250px;
+			position: relative;
+			width: 200px;
+			height: 78px;
+			background-color: divcolor(div4);
+		}
+		.div5 {
+			text-align: center;
+			font-family: $text-font;
+			color: color(item-text-color);
+			font-size: 22px;
+			top: 50px;
+			left: 250px;
+			position: relative;
+			width: 200px;
+			height: 78px;
+			background-color: divcolor(div5);
+		}
+	}
+}
