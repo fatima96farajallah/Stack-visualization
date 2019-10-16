@@ -1,0 +1,62 @@
+$colors: (
+    text-color: #FFFFFF,
+    border-color:#904C77,
+    backgrond-color:#904C77,
+);
+$text-font:sans-serif;
+@function color($color) {
+    $color: map-get($map: $colors, $key: $color);
+    @return $color;
+}
+body,html {
+    height: 100%;
+}
+.header {
+    background-color: color(backgrond-color);
+    height: 80px;
+    margin-top: -15px;
+    margin-right: -8px;
+    margin-left: -8px;
+    h1 {
+        text-align: center;
+        font-family: $text-font;
+        font-size: 30px;
+        color: color(text-color);
+        padding-top: 30PX;
+    }
+}
+.root {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    .leftviwe {
+        width: 25%;
+        height: 70%;
+        margin-top: 100px;
+        margin-left: 85px;
+        border-bottom: solid 5px color(border-color);
+        border-right: solid 5px color(border-color);
+        border-left: solid 5px color(border-color);
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+        .rightviwe {
+           justify-content: center;
+            margin-left: 600px;
+            display: flex;
+            flex-direction: column;
+           width: 20%;
+           button {
+               
+               height: 78px;
+               background-color: color(backgrond-color);
+               color: color(text-color);
+               font-family: $text-font;
+               font-size: 22px;
+               text-align: center;
+           }
+           }
+    }
+ 
