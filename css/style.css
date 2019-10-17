@@ -29,6 +29,7 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  overflow: hidden;
 }
 
 .root .leftviwe {
@@ -40,9 +41,6 @@ html {
   border-bottom: solid 5px #904C77;
   border-right: solid 5px #904C77;
   border-left: solid 5px #904C77;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -50,9 +48,123 @@ html {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: auto;
 }
 
-.root .rightviwe {
+.root .leftviwe .div1 {
+  bottom: 5PX;
+  text-align: center;
+  font-family: sans-serif;
+  color: #904C77;
+  font-size: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 300px;
+  height: 78px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  background-color: #E7CFCD;
+}
+
+.root .leftviwe .div2 {
+  bottom: 90PX;
+  text-align: center;
+  font-family: sans-serif;
+  color: #904C77;
+  font-size: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 300px;
+  height: 78px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  background-color: #CFC0BD;
+}
+
+.root .leftviwe .div3 {
+  bottom: 180PX;
+  text-align: center;
+  font-family: sans-serif;
+  color: #904C77;
+  font-size: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 300px;
+  height: 78px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  background-color: #CAB6CD;
+}
+
+.root .leftviwe .div4 {
+  bottom: 265PX;
+  text-align: center;
+  font-family: sans-serif;
+  color: #904C77;
+  font-size: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 300px;
+  height: 78px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  background-color: #BA8F95;
+}
+
+.root .leftviwe .div5 {
+  bottom: 350PX;
+  text-align: center;
+  font-family: sans-serif;
+  color: #904C77;
+  font-size: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 300px;
+  height: 78px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  background-color: #D3C1C3;
+}
+
+.rightviwe {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -67,7 +179,7 @@ html {
   width: 20%;
 }
 
-.root .rightviwe button {
+.rightviwe button {
   cursor: pointer;
   height: 78px;
   background-color: #904C77;
@@ -77,80 +189,21 @@ html {
   text-align: center;
 }
 
-.root .items {
-  position: relative;
-  margin-top: 180px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+@-webkit-keyframes mymove {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 200px;
+  }
 }
 
-.root .items .div1 {
-  text-align: center;
-  font-family: sans-serif;
-  color: #904C77;
-  font-size: 22px;
-  top: -10px;
-  left: 220px;
-  position: absolute;
-  width: 200px;
-  height: 78px;
-  background-color: #E7CFCD;
-}
-
-.root .items .div2 {
-  text-align: center;
-  font-family: sans-serif;
-  color: #904C77;
-  font-size: 22px;
-  top: 83px;
-  left: 220px;
-  position: absolute;
-  width: 200px;
-  height: 78px;
-  background-color: #CFC0BD;
-}
-
-.root .items .div3 {
-  text-align: center;
-  font-family: sans-serif;
-  color: #904C77;
-  font-size: 22px;
-  top: 183px;
-  left: 220px;
-  position: absolute;
-  width: 200px;
-  height: 78px;
-  background-color: #CAB6CD;
-}
-
-.root .items .div4 {
-  text-align: center;
-  font-family: sans-serif;
-  color: #904C77;
-  font-size: 22px;
-  top: 283px;
-  left: 220px;
-  position: absolute;
-  width: 200px;
-  height: 78px;
-  background-color: #BA8F95;
-}
-
-.root .items .div5 {
-  text-align: center;
-  font-family: sans-serif;
-  color: #904C77;
-  font-size: 22px;
-  top: 383px;
-  left: 220px;
-  position: absolute;
-  width: 200px;
-  height: 78px;
-  background-color: #D3C1C3;
+@keyframes mymove {
+  from {
+    top: 0px;
+  }
+  to {
+    top: 200px;
+  }
 }
 /*# sourceMappingURL=style.css.map */

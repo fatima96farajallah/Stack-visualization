@@ -8,10 +8,12 @@ $text-font:sans-serif;
     text-align: center;
 }
 @mixin stylediv {
-    left: 220px;
+	display: flex;
+	justify-content: center;
     position: absolute;
-    width: 200px;
-    height: 78px;
+    width: 300px;
+	height: 78px;
+	align-items: center;
 }
 @mixin divstyletext {
     text-align: center;
@@ -23,7 +25,6 @@ $text-font:sans-serif;
 	$divcolor: map-get($map: $divcolors, $key: $divcolor);
 	@return $divcolor;
 }
-
 @function color($color) {
 	$color: map-get($map: $colors, $key: $color);
 	@return $color;
@@ -55,6 +56,7 @@ html {
 	height: 100%;
 	margin: 0 auto;
 	justify-content: space-between;
+	overflow: hidden;
 	.leftviwe {
 		position: relative;
 		width: 25%;
@@ -64,9 +66,46 @@ html {
 		border-bottom: solid 5px color(border-color);
 		border-right: solid 5px color(border-color);
 		border-left: solid 5px color(border-color);
-		justify-content: center;
 		display: flex;
-		flex-direction: column;
+		flex-direction: column;	
+		align-items: center;
+		overflow: auto;
+			.div1 {
+				bottom: 5PX;
+				@include divstyletext();
+				@include stylediv();
+				position: absolute;
+				background-color: divcolor(div1);
+			}
+			.div2 {
+				bottom: 90PX;
+				@include divstyletext();
+				@include stylediv();
+				position: absolute;
+				background-color: divcolor(div2);
+			}
+			.div3 {
+				bottom: 180PX;
+				@include divstyletext();
+				@include stylediv();
+				position: absolute;
+				background-color: divcolor(div3);
+			}
+			.div4 {
+				bottom: 265PX;
+				@include divstyletext();
+				@include stylediv();
+				position: absolute;
+				background-color: divcolor(div4);
+			}
+			.div5 {
+				bottom: 350PX;
+				@include divstyletext();
+				@include stylediv();
+				position: absolute;
+				background-color: divcolor(div5);
+			}
+		}
 	}
 	.rightviwe {
 		justify-content: center;
@@ -81,41 +120,9 @@ html {
             @include textstylebtn();
 		}
 	}
-	.items {
-        position: relative;
-		margin-top: 180px;
-		display: flex;
-		flex-direction: column;
-		.div1 {
-			@include divstyletext();
-			top: -10px;
-		    @include stylediv();
-			background-color: divcolor(div1);
-		}
-		.div2 {
-			@include divstyletext();
-            top: 83px;
+	@keyframes mymove {
+		from {top: 0px;}
+		to {top: 200px;}
+	  }
+	
 
-		    @include stylediv();
-			background-color: divcolor(div2);
-		}
-		.div3 {
-	    	@include divstyletext();
-			top: 183px;
-            @include stylediv();
-			background-color: divcolor(div3);
-		}
-		.div4 {
-	    	@include divstyletext();
-			top: 283px;
-            @include stylediv();
-			background-color: divcolor(div4);
-		}
-		.div5 {
-			@include divstyletext();
-			top: 383px;
-            @include stylediv();
-			background-color: divcolor(div5);
-		}
-	}
-}
