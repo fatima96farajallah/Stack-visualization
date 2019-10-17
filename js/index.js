@@ -68,3 +68,7 @@ console.log(myStack.popAt(1)) // 3
 console.log(myStack.stacks) // [ [ 1, 2, 4 ], [ 5 ] ]
 
 
+function setAnimation(item) {
+  
+  item.className += " div1";
+}

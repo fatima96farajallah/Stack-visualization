@@ -11,7 +11,7 @@ $text-font:sans-serif;
 	display: flex;
 	justify-content: center;
     position: absolute;
-    width: 300px;
+    width: 250px;
 	height: 78px;
 	align-items: center;
 }
@@ -69,8 +69,17 @@ html {
 		display: flex;
 		flex-direction: column;	
 		align-items: center;
-		overflow: auto;
+		overflow: hidden;
 			.div1 {
+				-webkit-animation-name: mymove;
+				-webkit-animation-duration: 1s;
+				-webkit-animation-delay: 2s;
+				-webkit-animation-fill-mode: both;
+				animation-name: mymove;
+				animation-duration: 1s;  
+				animation-delay: 2s;
+				animation-fill-mode: both;
+				animation-timing-function: ease-in-out;
 				bottom: 5PX;
 				@include divstyletext();
 				@include stylediv();
@@ -121,8 +130,11 @@ html {
 		}
 	}
 	@keyframes mymove {
-		from {top: 0px;}
-		to {top: 200px;}
-	  }
-	
+		from {left: 63px; }
+		  to {left: 400px; display: none;}
+	}
 
+	@-webkit-keyframes mymove {
+		from {left: 63px; }
+		  to {left: 400px; display: none;}
+	}
