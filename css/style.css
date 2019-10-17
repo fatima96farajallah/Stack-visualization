@@ -56,15 +56,16 @@ html {
 
 .root .leftviwe .div1 {
   -webkit-animation-name: mymove;
+          animation-name: mymove;
   -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-delay: 2s;
+          animation-delay: 2s;
   -webkit-animation-fill-mode: both;
-  animation-name: mymove;
-  animation-duration: 1s;
-  animation-delay: 2s;
-  animation-fill-mode: both;
+          animation-fill-mode: both;
   -webkit-animation-timing-function: ease-in-out;
           animation-timing-function: ease-in-out;
+  overflow: hidden;
   bottom: 5PX;
   text-align: center;
   font-family: sans-serif;
@@ -87,6 +88,9 @@ html {
 }
 
 .root .leftviwe .div2 {
+  -webkit-animation-name: push;
+          animation-name: push;
+  overflow: hidden;
   bottom: 90PX;
   text-align: center;
   font-family: sans-serif;
@@ -197,6 +201,24 @@ html {
   font-family: sans-serif;
   font-size: 22px;
   text-align: center;
+}
+
+@-webkit-keyframes push {
+  from {
+    left: 400px;
+  }
+  to {
+    left: 41px;
+  }
+}
+
+@keyframes push {
+  from {
+    left: 400px;
+  }
+  to {
+    left: 41px;
+  }
 }
 
 @keyframes mymove {

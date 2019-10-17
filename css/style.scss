@@ -7,6 +7,12 @@ $text-font:sans-serif;
     font-size: 22px;
     text-align: center;
 }
+@mixin animation {
+	animation-duration: 1s;  
+	animation-delay: 2s;
+	animation-fill-mode: both;
+	animation-timing-function: ease-in-out;
+}
 @mixin stylediv {
 	display: flex;
 	justify-content: center;
@@ -71,15 +77,9 @@ html {
 		align-items: center;
 		overflow: hidden;
 			.div1 {
-				-webkit-animation-name: mymove;
-				-webkit-animation-duration: 1s;
-				-webkit-animation-delay: 2s;
-				-webkit-animation-fill-mode: both;
 				animation-name: mymove;
-				animation-duration: 1s;  
-				animation-delay: 2s;
-				animation-fill-mode: both;
-				animation-timing-function: ease-in-out;
+				@include animation();
+				overflow: hidden;
 				bottom: 5PX;
 				@include divstyletext();
 				@include stylediv();
@@ -87,6 +87,8 @@ html {
 				background-color: divcolor(div1);
 			}
 			.div2 {
+				animation-name: push;
+				overflow: hidden;
 				bottom: 90PX;
 				@include divstyletext();
 				@include stylediv();
@@ -128,6 +130,10 @@ html {
 			background-color: color(backgrond-color);
             @include textstylebtn();
 		}
+	}
+	@keyframes push{
+		from {left: 400px;}
+		to {left:41px;}
 	}
 	@keyframes mymove {
 		from {left: 63px; }
