@@ -1,46 +1,34 @@
-
-
-
-
-class StackSet {
-  constructor(maxSize) {
-    if (arguments.length < 1) {
-      throw new Error ('Woops, maxSize is required!')
-    }
-    
-    this.stacks = [[]]
-    this.maxSize = maxSize
-  }
-  
-  push(value) {
-    if (this.stacks[this.stacks.length - 1].length === this.maxSize) {
-      this.stacks.push([])
-    }
-    
-    this.stacks[this.stacks.length - 1].push(value) 
-  }
-  
-  pop() {
-   const value = this.stacks[this.stacks.length - 1].pop()
-   
-   if (this.stacks.length > 1 && this.stacks[this.stacks.length - 1].length === 0) {
-    this.stacks.pop()
-   }
-    
-    return value
-  }
+function pushitems(numitem) {
+  let items = `<li class = "elmnt" id ="${numitem}">Item ${numitem}</li>`
+  return items;
 }
-const myStack = new StackSet(3)
-// to test if it works
-myStack.push(1)
-myStack.push(2)
-myStack.push(3)
-myStack.push(4)
-myStack.push(5)
-myStack.push(6)
-function setAnimationpop(item) {
-  item.className += " div1";
+let stack = [];
+let numitem = 0;
+let swapreern = 1;
+
+function push() {
+  numitem++;
+  stack.push(numitem);
+  let liitem = document.createElement("div");
+  liitem.innerHTML = pushitems(numitem);
+  let list = document.getElementById("card");
+  list.insertBefore(liitem, list.childNodes[0]);
+  let item = document.getElementById(stack.length);
+  item.style.right = 500 + "px";
+  Movepush();
 }
-function setAnimationpush(item) {
-  item.className += " div2";
+function Movepush() {
+  let item = document.getElementById(stack.length);
+  let pos = 500;
+  let id = setInterval(frame, 1);
+  function frame() {
+      if (pos == 0) {
+          clearInterval(id);
+          return 0;
+      } else {
+          pos--;
+          item.style.right = pos + "px";
+      }
+  }
+  return 0;
 }

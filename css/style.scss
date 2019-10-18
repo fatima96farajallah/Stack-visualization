@@ -1,5 +1,4 @@
-$colors: ( item-text-color :#904C77, text-color: #FFFFFF, border-color:#904C77, backgrond-color:#904C77);
-$divcolors: ( div1: #E7CFCD, div2:#CFC0BD, div3:#CAB6CD, div4:#BA8F95, div5:#D3C1C3);
+$colors: ( item-text-color :#904C77, text-color: #FFFFFF, border-color:#904C77, backgrond-color:#904C77 , item-color:#E7CFCD);
 $text-font:sans-serif;
 @mixin textstylebtn {
     color: color(text-color);
@@ -12,24 +11,6 @@ $text-font:sans-serif;
 	animation-delay: 2s;
 	animation-fill-mode: both;
 	animation-timing-function: ease-in-out;
-}
-@mixin stylediv {
-	display: flex;
-	justify-content: center;
-    position: absolute;
-    width: 250px;
-	height: 78px;
-	align-items: center;
-}
-@mixin divstyletext {
-    text-align: center;
-	font-family: $text-font;
-	color: color(item-text-color);
-	font-size: 22px;
-}
-@function divcolor($divcolor) {
-	$divcolor: map-get($map: $divcolors, $key: $divcolor);
-	@return $divcolor;
 }
 @function color($color) {
 	$color: map-get($map: $colors, $key: $color);
@@ -76,46 +57,18 @@ html {
 		flex-direction: column;	
 		align-items: center;
 		overflow: hidden;
-			.div1 {
-				animation-name: mymove;
-				@include animation();
-				overflow: hidden;
-				bottom: 5PX;
-				@include divstyletext();
-				@include stylediv();
-				position: absolute;
-				background-color: divcolor(div1);
+		ul {
+			padding:0;
+			li {
+				width: 240px;
+				height: 76px;
+				background-color: color(item-color);
+				list-style-type: none;
+				margin: 10px;
+				@include textstylebtn();
 			}
-			.div2 {
-				animation-name: push;
-				overflow: hidden;
-				bottom: 90PX;
-				@include divstyletext();
-				@include stylediv();
-				position: absolute;
-				background-color: divcolor(div2);
-			}
-			.div3 {
-				bottom: 180PX;
-				@include divstyletext();
-				@include stylediv();
-				position: absolute;
-				background-color: divcolor(div3);
-			}
-			.div4 {
-				bottom: 265PX;
-				@include divstyletext();
-				@include stylediv();
-				position: absolute;
-				background-color: divcolor(div4);
-			}
-			.div5 {
-				bottom: 350PX;
-				@include divstyletext();
-				@include stylediv();
-				position: absolute;
-				background-color: divcolor(div5);
-			}
+		}
+	
 		}
 	}
 	.rightviwe {
@@ -131,16 +84,4 @@ html {
             @include textstylebtn();
 		}
 	}
-	@keyframes push{
-		from {left: 400px;}
-		to {left:41px;}
-	}
-	@keyframes mymove {
-		from {left: 63px; }
-		  to {left: 400px; display: none;}
-	}
-
-	@-webkit-keyframes mymove {
-		from {left: 63px; }
-		  to {left: 400px; display: none;}
-	}
+	
