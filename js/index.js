@@ -35,14 +35,15 @@ function pushtostack() {
 }
 
 function deletefromstack() {
+  popfromstack();
   let item = document.getElementById(stack.length);
-  let index = numberofstat;
+  let index = stack.length;
   item.parentNode.removeChild(item);
   stack.pop(stack.length)
   numitem--;
-  document.getElementById("pop").disabled = false;
   return index;
 }
+
 function pop() {
   for (let index = 1; index <= stack.length; index++) {
       var elem = document.getElementById(index);
@@ -51,20 +52,21 @@ function pop() {
   stack = [];
   numitem = 0;
 }
+
 function popfromstack() {
-  document.getElementById("pop").disabled = true;
   var elem = document.getElementById(stack.length);
   var pos = 0;
-  var id = setInterval(frame, 1);
+  var id = setInterval(frame, 20);
+
   function frame() {
 
-      if (pos == 200) {
-          pop();
+      if (pos == 400) {
+          deletefromstack()
           clearInterval(id);
           return 0;
       } else {
           pos++;
-          elem.style.right = pos + "px";
+          elem.style.bottom = pos + "px";
       }
   }
   return 0;
@@ -85,7 +87,7 @@ function sizeofstack() {
   return stack.length;
 }
 
-function isempty() {
+function isEmpty() {
   if (isempty())
       alert("The stack is empty !!!!");
   else alert("The stack is not empty");
