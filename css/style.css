@@ -58,7 +58,14 @@ html {
   padding: 0;
 }
 
-.root .leftviwe ul li {
+.root .leftviwe .stack {
+  position: absolute;
+  bottom: 0;
+}
+
+.root .leftviwe .item {
+  display: inline-block;
+  position: relative;
   width: 240px;
   height: 76px;
   background-color: #E7CFCD;

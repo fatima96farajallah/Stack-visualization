@@ -59,16 +59,21 @@ html {
 		overflow: hidden;
 		ul {
 			padding:0;
-			li {
-				width: 240px;
-				height: 76px;
-				background-color: color(item-color);
-				list-style-type: none;
-				margin: 10px;
-				@include textstylebtn();
-			}
 		}
-	
+		.stack {
+			position: absolute;
+			bottom: 0;
+		}
+		.item {
+			display: inline-block;
+			position: relative;
+			width: 240px;
+			height: 76px;
+			background-color: color(item-color);
+			list-style-type: none;
+			margin: 10px;
+			@include textstylebtn();
+		}
 		}
 	}
 	.rightviwe {
